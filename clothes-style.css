@@ -35,6 +35,7 @@ a {
 .nav-column {
     flex: 1;
     display: flex;
+    align-items: center;
 }
 
 .nav-column.left {
@@ -71,60 +72,137 @@ a {
     opacity: 70%;
 }
 
-.main_container {
-    width: 100%;
-    position: relative;
-}
-
-.main {
+.container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 10vh;
-    padding: 0 20px; /* Jarak aman agar tidak menempel ke pinggir layar HP */
-}
-
-#container_img {
-    perspective: 1000px;
-    width: 100%;
-    display: flex;
     justify-content: center;
+    gap: 90px; /* Jarak antara panah dan gambar */
+    margin-top: 5vh;
+    padding: 0 20px;
 }
 
-#inner {
-    position: relative;
-    transition: transform 0.1s ease-out;
-    transform-style: preserve-3d;
-    width: clamp(280px, 80vw, 400px); 
-    aspect-ratio: 1 / 1; 
-    overflow: hidden;
+.arrow-left, .arrow-right {
+    width: 40px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.demo-img {
+.arrow-right {
+    transform: rotate(180deg); /* Memutar panah ke kiri */
+}
+
+.arrow-left:hover, .arrow-right:hover {
+    opacity: 0.5;
+}
+
+.frame {
+    width: clamp(300px, 80vw, 500px); /* Ukuran gambar slider */
+    aspect-ratio: 1 / 1;
+    overflow: hidden; /* Menyembunyikan gambar yang sedang tidak aktif */
+    border: 1px solid #1a1a1a;
+}
+
+.slide {
+    display: flex; /* Membuat gambar berjejer ke samping */
     width: 100%;
     height: 100%;
-    border-radius: 15px;
-    object-fit: cover; 
-    display: block;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Gerakan halus */
 }
 
-
-#container_img:hover {
-    perspective: 1000px;
-    width: fit-content; 
-    margin: 0 auto; 
-    display: block;
-}
-
-.demo-overlay {
-    z-index: 2;
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
+.image {
+    width: 100%; /* Mengikuti ukuran .frame */
     height: 100%;
-    opacity: 0;
-    background-color: rgba(45, 65, 69, 0.223);
-    transition: opacity 0.4s;
-    pointer-events: none;
+    object-fit: cover;
+    flex-shrink: 0; /* Mencegah gambar menyusut */
+}
+
+.buy-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Jarak antara gambar dan tombol */
+    margin-top: 10vh;
+}
+
+.buy-btn a {
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif; /* Menggunakan font Anton agar terlihat bold/impact */
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.buy-btn a:hover {
+    opacity: 70%;
+}
+
+.footer {
+    width: 100%;
+    background-color: #000; /* Warna hitam sesuai body */
+    border-top: 1px solid #222; /* Garis tipis transparan di bagian atas */
+    padding: 2rem 0;
+    margin-top: 20vh; /* Membantu footer tetap di bawah jika konten sedikit */
+}
+
+.footer-container {
+    max-width: 100%; /* Sesuaikan dengan max-width navbar Anda */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Memisahkan kiri dan kanan */
+    align-items: center;
+    padding: 0 5%; /* Jarak simetris seperti navbar Anda */
+}
+
+.footer-copyright p {
+    color: #888; /* Warna abu-abu agar tidak terlalu kontras */
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem; /* Jarak antara Terms dan Privacy Policy */
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff; 
+}
+
+/* Penyesuaian Responsif untuk HP */
+@media (max-width: 600px) {
+    .buy-btn {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+}
+
+/* Responsive untuk HP */
+@media (max-width: 600px) {
+    .container {
+        gap: 10px;
+    }
+    .arrow-left, .arrow-right {
+        width: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        gap: 1.5rem;
+    }
 }
