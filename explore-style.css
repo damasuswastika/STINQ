@@ -46,6 +46,14 @@ a {
     justify-content: flex-end;
 }
 
+.nav-column.right img {
+    transition: 0.2s;
+}
+
+.nav-column.right img:hover {
+    opacity: 70%;
+}
+
 .navbar .links {
     display: flex;
     gap: 2rem; 
@@ -59,6 +67,7 @@ a {
     display: flex;
     justify-content: center;
     flex: 0 0 auto;
+    align-items: center;
 }
 
 .navbar .logo img {
@@ -70,7 +79,7 @@ a {
 
 .navbar .logo img:hover {
     opacity: 70%;
-}
+}   
 
 .row {
     max-width: 100%;
@@ -115,6 +124,67 @@ a {
     font-size: 0.9rem;
     color: #fff;
     margin-top: 1rem;
+}
+
+.cartTab {
+    width: 400px;
+    background-color: #2c2c2c22;
+    position: fixed;
+    top: 0;
+    right: 0; 
+    bottom: 0;
+    inset: 0 0 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px; 
+}
+
+.cartTab h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding: 20px;
+    margin: 0;
+    font-weight: 350;
+}
+
+.btn-cart {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.btn-cart button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none; 
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-cart button:hover {
+    background-color: #960000;
+}
+
+.cartTab .ListCart .item img {
+    width: 100%;
+    margin-left: 3vh;
+}
+
+.cartTab .ListCart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.ListCart .quantity span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #2c2c2c;
+    color: #fff;
 }
 
 .footer {
