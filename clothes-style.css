@@ -136,6 +136,82 @@ a {
     opacity: 70%;
 }
 
+.cartTab {
+    width: 400px;
+    background-color: #0c0c0c;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: -400px; /* Sembunyi di kanan */
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 0.2s;
+}
+
+body.showCart .cartTab {
+    right: 0;
+}
+
+.cartTab h1 {
+    padding: 20px;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.cartTab .ListCart {
+    overflow: auto;
+    padding: 10px;
+}
+
+.cartTab .ListCart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 1fr 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cartTab .ListCart .item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.cartTab .ListCart .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #353432;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.cartTab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn button {
+    background-color: #333333;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: 0.2s;
+}
+
+.cartTab .btn .close {
+    background-color: #ff0000;
+}
+
+.cartTab .btn button:hover {
+    opacity: 70%;
+}
+
 .footer {
     width: 100%;
     background-color: #000; /* Warna hitam sesuai body */

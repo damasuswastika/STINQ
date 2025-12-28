@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="test-style.css" />
+    <link rel="stylesheet" href="animation.css" />
+    <title>STINQ CLOTHES</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-column left">
+                <ul class="links">
+                    <li><a href="index.html">HOME</a></li>
+                </ul>
+            </div>
+
+            <div class="logo">
+                <a href="explore.html"> <img src="assets/STINQWORLDSTAMPLE.png"> </a>
+            </div>
+
+            <div class="nav-column right">
+                <!-- Tambahkan ID cart-icon dan span count -->
+                <div id="cart-icon" style="cursor: pointer; position: relative;">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA60lEQVR4nO3WsQpBURjA8VsmKwNG5Q1MJoOFlFmKJ7BY5QHkJZTJG9ydYrPZhZXBoAh/XX1ic45z7pH4z1/n11nOdzzvJwPGPFoA1U/AQScg4wS/BwxuNHQ8lwEVgaeu4SiwB85AwjXuy60bruEm4TR6BadDglcqt56HAPdV4F4IcE0FzltGL0BSBY4AG4vw7CX6hA8twl0duG4RLujAMVkYpu2DF1EZFnxiAfa1UIHbFuDWO3AK2BmgWyCuDQueC9YkcNQAD/LByL6F/m5AGVgHGwYomc4pJwfdW5rOfQVckkOXQNF07p/nqit4etkTHpfOQQAAAABJRU5ErkJggg==" alt="cart">
+                    <span id="cart-count" style="position: absolute; top: -5px; right: -5px; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 10px;">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <img src="assets/icons8-arrow-50.png" class="arrow-left" id="prevBtn">
+        <div class="frame">
+            <div class="slide" id="product-display">
+                <!-- Gambar muncul via JS -->
+            </div>
+        </div>
+        <img src="assets/icons8-arrow-50.png" class="arrow-right" id="nextBtn">
+    </div>
+
+    <div class="product-info" style="text-align: center; margin-top: 20px; color: white;">
+        <h2 id="display-name" style="font-family: 'Archivo Black';">LOADING...</h2>
+        <p id="display-price" style="font-family: 'Oswald';">Rp 0</p>
+    </div>
+
+    <main>
+        <div class="buy-btn">
+            <!-- Tambahkan ID add-to-cart-trigger agar terbaca JS -->
+            <button id="add-to-cart-trigger" style="background: white; border: none; padding: 10px 20px; font-family: 'Archivo Black'; cursor: pointer;">
+                ADD TO CART
+            </button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-copyright">
+                <p>&copy; 2025 STINQ. All rights reserved.</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Sidebar Keranjang -->
+    <div class="cartTab">
+        <h1 style="padding: 20px;">CART</h1>
+        <div class="ListCart"></div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- Cukup panggil SATU file JS saja untuk menghindari konflik -->
+    <script src="test.js"></script>
+</body>
+</html>
