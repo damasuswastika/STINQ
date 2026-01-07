@@ -120,6 +120,50 @@ a {
     flex-shrink: 0; /* Mencegah gambar menyusut */
 }
 
+.product-description {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff; /* Sesuaikan dengan tema STINQ */
+    text-align: left;
+}
+
+.product-description h2 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    border-bottom: 2px solid red; /* Warna aksen STINQ */
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.spec-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.spec-list li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+}
+
+.spec-list i {
+    margin-right: 15px;
+    margin-top: 5px;
+    color: #ff0000; /* Warna ikon */
+}
+
+.spec-list b {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+}
+
 .buy-btn {
     display: flex;
     flex-direction: column;
